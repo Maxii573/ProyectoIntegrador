@@ -55,11 +55,12 @@ class Juegos:
 
     
     def dado(self):
-        pass
+        cara = random.choice([1, 2, 3, 4, 5, 6])
+        print(f"Tiraste el dado! La cara es: {cara}")
 
     
     def grafico(self):
         pass    
 
 usuario = Juegos()
-usuario.num_random()
+usuario.dado()
