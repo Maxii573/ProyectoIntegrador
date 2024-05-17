@@ -40,7 +40,18 @@ class Juegos:
 
 
     def num_random(self):
-        pass
+        print("¡Adivina el número del bot! El rango de números: 1 - 5\n")
+        # Número computadora
+        bot = random.randint(1, 5)
+        
+        # Número usuario
+        user = int(input("Ingrese su número: "))
+
+        # Match
+        if user == bot:
+            print(f"\n¡Número adivinado! Bot: {bot} / Usuario: {user}")
+        else:
+            print(f"\n¡Número no adivinado! Bot: {bot} / Usuario: {user}")
 
     
     def dado(self):
@@ -51,3 +62,4 @@ class Juegos:
         pass    
 
 usuario = Juegos()
+usuario.num_random()
