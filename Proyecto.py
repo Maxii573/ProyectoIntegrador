@@ -60,7 +60,38 @@ class Juegos:
 
     
     def grafico(self):
-        pass    
+        print("\nCreación de una función gráfica:")
+        print("Escriba los ejes de Y separados por coma.\nEj: 3, 5, 8, 12\n")
+
+        # Eje Y
+        user = [input("Ejes Y: ")]
+        user_Y = user[0].split(sep=",")
+        y = []
+        for i in user_Y:
+            y.append(int(i))
+        
+        # Eje X
+        validacion_x = input("Quiere agregar ejes X? S/N: ").upper()
+        
+        if validacion_x == "S":
+            print(f"Escriba {len(y)} ejes de X separados por coma.")
+            
+            # Eje X
+            user = [input("Ejes X: ")]
+            user_X = user[0].split(sep=",")
+            x = []
+            for i in user_X:
+                x.append(int(i))
+            
+            # Gráfica X / Y
+            plt.plot(x, y)
+            plt.show()
+
+        else:
+            # Gráfica Y
+            plt.plot(y)
+            plt.show()
+        
 
 usuario = Juegos()
-usuario.dado()
+usuario.grafico()
