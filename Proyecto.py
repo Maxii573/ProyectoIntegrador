@@ -13,3 +13,23 @@ def menu():
         
 4 - Graficar una función matemática
     ''')
+
+# Clase
+class Juegos:
+
+    def PPT(self):
+        pass         
+
+
+    def num_random(self):
+        pass
+
+    
+    def dado(self):
+        pass
+
+    
+    def grafico(self):
+        pass    
+
+usuario = Juegos()
