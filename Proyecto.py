@@ -24,10 +24,13 @@ class Juegos:
         # Computadora
         bot = random.choice(opciones)
 
+        
         # Usuario
-        user = input("Escoja el objeto: ")
-
-
+        while True:
+            user = input("Escoja entre Piedra / Papel / Tijera: ").replace(" ", "").capitalize()
+ 
+            if user in opciones:
+                break
 
         # Match
         if user == bot:
@@ -113,6 +116,7 @@ class Juegos:
         
 
 usuario = Juegos()
+usuario.PPT()
 
 
 
