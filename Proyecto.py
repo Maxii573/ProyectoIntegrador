@@ -18,7 +18,7 @@ def menu():
 class Juegos:
 
     def PPT(self):
-        print("\nPiedra   /   Papel  /    Tijera\n")
+        print("\n/////   Piedra   /   Papel  /    Tijera   /////\n")
         opciones = ["Piedra", "Papel", "Tijera"]
         
         # Computadora
@@ -34,12 +34,12 @@ class Juegos:
 
         # Match
         if user == bot:
-            print(f"\nBot: {bot} / Usuario: {user}\n¡Es empate!")
+            print(f"\nBot: {bot} / Usuario: {user} -> ¡Es empate!\n")
         else:
             if (user == "Piedra" and bot == "Tijera") or (user == "Tijera" and bot == "Papel") or (user == "Papel" and bot == "Piedra"):
-                print(f"\nBot: {bot} / Usuario: {user}\n¡Gana el usuario!")
+                print(f"\nBot: {bot} / Usuario: {user} -> ¡Gana el usuario!\n")
             else:
-                print(f"\nBot: {bot} / Usuario: {user}\n¡Gana el bot!")      
+                print(f"\nBot: {bot} / Usuario: {user} -> ¡Gana el bot!\n")      
 
 
     def num_random(self):
@@ -126,7 +126,7 @@ class Juegos:
         
 
 usuario = Juegos()
-usuario.grafico()
+usuario.PPT()
 
 
 
