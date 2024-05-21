@@ -60,7 +60,59 @@ class Juegos:
 
     
     def grafico(self):
-        pass    
+        print("\nCreación de una función gráfica:")
+        print("Escriba el eje de Y.\nAl terminar, escriba salir\n")
+
+        # Eje Y
+        y = []
+        while True:
+            eje_y = input("Ingrese un eje de Y: ")
+            if eje_y == "salir":
+                break
+            else:          
+                if "." in eje_y:
+                    y.append(float(eje_y))
+
+                else:
+                    try:
+                        y.append(int(eje_y))
+                    except ValueError:
+                        print("Error: Ingrese un número entero (1) o flotante (1.5)")
+
+        # Eje X
+        validacion_x = input("Quiere agregar ejes X? S/N: ").upper()
+
+        if validacion_x == "S":
+            print(f"Escriba {len(y)} ejes de X")
+            
+            x = []
+            while True:
+                if len(x) == len(y):
+                    break
+                else:
+                    eje_x = input("Ingrese un eje de X: ")
+
+         
+                if "." in eje_x:
+                    x.append(float(eje_x))
+                else:
+                    try:
+                        x.append(int(eje_x))
+                    except ValueError:
+                        print("Error: Ingrese un número entero (1) o flotante (1.5)")
+                
+            # Gráfica X / Y
+            print("Función gráfica creada.")
+            plt.plot(x, y)
+            plt.show()
+
+        else:
+            # Gráfica Y
+            plt.plot(y)
+            plt.show()
+        
 
 usuario = Juegos()
-usuario.dado()
+
+
+
