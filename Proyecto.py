@@ -61,29 +61,48 @@ class Juegos:
     
     def grafico(self):
         print("\nCreación de una función gráfica:")
-        print("Escriba los ejes de Y separados por coma.\nEj: 3, 5, 8, 12\n")
+        print("Escriba el eje de Y.\nAl terminar, escriba salir\n")
 
         # Eje Y
-        user = [input("Ejes Y: ")]
-        user_Y = user[0].split(sep=",")
         y = []
-        for i in user_Y:
-            y.append(int(i))
-        
+        while True:
+            eje_y = input("Ingrese un eje de Y: ")
+            if eje_y == "salir":
+                break
+            else:          
+                if "." in eje_y:
+                    y.append(float(eje_y))
+
+                else:
+                    try:
+                        y.append(int(eje_y))
+                    except ValueError:
+                        print("Error: Ingrese un número entero (1) o flotante (1.5)")
+
         # Eje X
         validacion_x = input("Quiere agregar ejes X? S/N: ").upper()
-        
+
         if validacion_x == "S":
-            print(f"Escriba {len(y)} ejes de X separados por coma.")
+            print(f"Escriba {len(y)} ejes de X")
             
-            # Eje X
-            user = [input("Ejes X: ")]
-            user_X = user[0].split(sep=",")
             x = []
-            for i in user_X:
-                x.append(int(i))
-            
+            while True:
+                if len(x) == len(y):
+                    break
+                else:
+                    eje_x = input("Ingrese un eje de X: ")
+
+         
+                if "." in eje_x:
+                    x.append(float(eje_x))
+                else:
+                    try:
+                        x.append(int(eje_x))
+                    except ValueError:
+                        print("Error: Ingrese un número entero (1) o flotante (1.5)")
+                
             # Gráfica X / Y
+            print("Función gráfica creada.")
             plt.plot(x, y)
             plt.show()
 
@@ -94,4 +113,6 @@ class Juegos:
         
 
 usuario = Juegos()
-usuario.grafico()
+
+
+
