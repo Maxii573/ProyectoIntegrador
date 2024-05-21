@@ -69,7 +69,7 @@ class Juegos:
     
     def dado(self):
         cara = random.choice([1, 2, 3, 4, 5, 6])
-        print(f"Tiraste el dado! La cara es: {cara}")
+        print(f"\nTiraste el dado! La cara es: {cara}\n")
 
     
     def grafico(self):
@@ -126,7 +126,7 @@ class Juegos:
         
 
 usuario = Juegos()
-usuario.num_random()
+usuario.grafico()
 
 
 
