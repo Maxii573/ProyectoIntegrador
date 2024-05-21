@@ -43,12 +43,22 @@ class Juegos:
 
 
     def num_random(self):
-        print("¡Adivina el número del bot! El rango de números: 1 - 5\n")
+        print("\n¡Adivina el número del bot! El rango de números: 1 - 5\n")
         # Número computadora
         bot = random.randint(1, 5)
         
         # Número usuario
-        user = int(input("Ingrese su número: "))
+        while True:
+            user = input("Ingrese su número: ")
+            try:
+                user = int(user)
+            except ValueError:
+                    print("\nError: Ingrese un número entero del 1 al 5")
+
+            if user in [1, 2, 3, 4, 5]:
+                break
+            else:
+                print("\nError: Ingrese un número entero del 1 al 5")
 
         # Match
         if user == bot:
@@ -116,7 +126,7 @@ class Juegos:
         
 
 usuario = Juegos()
-usuario.PPT()
+usuario.num_random()
 
 
 
