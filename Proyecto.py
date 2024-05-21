@@ -24,10 +24,13 @@ class Juegos:
         # Computadora
         bot = random.choice(opciones)
 
+        
         # Usuario
-        user = input("Escoja el objeto: ")
-
-
+        while True:
+            user = input("Escoja entre Piedra / Papel / Tijera: ").replace(" ", "").capitalize()
+ 
+            if user in opciones:
+                break
 
         # Match
         if user == bot:
@@ -40,12 +43,22 @@ class Juegos:
 
 
     def num_random(self):
-        print("¡Adivina el número del bot! El rango de números: 1 - 5\n")
+        print("\n¡Adivina el número del bot! El rango de números: 1 - 5\n")
         # Número computadora
         bot = random.randint(1, 5)
         
         # Número usuario
-        user = int(input("Ingrese su número: "))
+        while True:
+            user = input("Ingrese su número: ")
+            try:
+                user = int(user)
+            except ValueError:
+                    print("\nError: Ingrese un número entero del 1 al 5")
+
+            if user in [1, 2, 3, 4, 5]:
+                break
+            else:
+                print("\nError: Ingrese un número entero del 1 al 5")
 
         # Match
         if user == bot:
@@ -56,7 +69,7 @@ class Juegos:
     
     def dado(self):
         cara = random.choice([1, 2, 3, 4, 5, 6])
-        print(f"Tiraste el dado! La cara es: {cara}")
+        print(f"\nTiraste el dado! La cara es: {cara}\n")
 
     
     def grafico(self):
@@ -113,6 +126,7 @@ class Juegos:
         
 
 usuario = Juegos()
+usuario.grafico()
 
 
 
