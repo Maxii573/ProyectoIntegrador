@@ -53,7 +53,7 @@ class Juegos:
             try:
                 user = int(user)
             except ValueError:
-                    print("\nError: Ingrese un número entero del 1 al 5")
+                    pass
 
             if user in [1, 2, 3, 4, 5]:
                 break
@@ -62,9 +62,9 @@ class Juegos:
 
         # Match
         if user == bot:
-            print(f"\n¡Número adivinado! Bot: {bot} / Usuario: {user}")
+            print(f"\nBot: {bot} / Usuario: {user} -> ¡Número adivinado!")
         else:
-            print(f"\n¡Número no adivinado! Bot: {bot} / Usuario: {user}")
+            print(f"\nBot: {bot} / Usuario: {user} -> ¡Número no adivinado!")
 
     
     def dado(self):
@@ -126,7 +126,7 @@ class Juegos:
         
 
 usuario = Juegos()
-usuario.PPT()
+usuario.num_random()
 
 
 
