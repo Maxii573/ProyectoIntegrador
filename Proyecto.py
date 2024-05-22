@@ -18,7 +18,7 @@ def menu():
 class Juegos:
 
     def PPT(self):
-        print("\nPiedra   /   Papel  /    Tijera\n")
+        print("\n/////   Piedra   /   Papel  /    Tijera   /////\n")
         opciones = ["Piedra", "Papel", "Tijera"]
         
         # Computadora
@@ -34,12 +34,12 @@ class Juegos:
 
         # Match
         if user == bot:
-            print(f"\nBot: {bot} / Usuario: {user}\n¡Es empate!")
+            print(f"\nBot: {bot} / Usuario: {user} -> ¡Es empate!\n")
         else:
             if (user == "Piedra" and bot == "Tijera") or (user == "Tijera" and bot == "Papel") or (user == "Papel" and bot == "Piedra"):
-                print(f"\nBot: {bot} / Usuario: {user}\n¡Gana el usuario!")
+                print(f"\nBot: {bot} / Usuario: {user} -> ¡Gana el usuario!\n")
             else:
-                print(f"\nBot: {bot} / Usuario: {user}\n¡Gana el bot!")      
+                print(f"\nBot: {bot} / Usuario: {user} -> ¡Gana el bot!\n")      
 
 
     def num_random(self):
@@ -53,7 +53,7 @@ class Juegos:
             try:
                 user = int(user)
             except ValueError:
-                    print("\nError: Ingrese un número entero del 1 al 5")
+                    pass
 
             if user in [1, 2, 3, 4, 5]:
                 break
@@ -62,29 +62,35 @@ class Juegos:
 
         # Match
         if user == bot:
-            print(f"\n¡Número adivinado! Bot: {bot} / Usuario: {user}")
+            print(f"\nBot: {bot} / Usuario: {user} -> ¡Número adivinado!")
         else:
-            print(f"\n¡Número no adivinado! Bot: {bot} / Usuario: {user}")
+            print(f"\nBot: {bot} / Usuario: {user} -> ¡Número no adivinado!")
 
     
     def dado(self):
         cara = random.choice([1, 2, 3, 4, 5, 6])
-        print(f"\nTiraste el dado! La cara es: {cara}\n")
+        print(f"\nTiraste el dado... ¡La cara del dado es: {cara}!\n")
 
     
     def grafico(self):
         print("\nCreación de una función gráfica:")
-        print("Escriba el eje de Y.\nAl terminar, escriba salir\n")
+        print("Escriba el eje de Y / Al terminar, escriba salir.\n")
 
         # Eje Y
         y = []
-        while True:
-            eje_y = input("Ingrese un eje de Y: ")
+        while True:                
+            if len(y) > 1:
+                eje_y = input("Ingrese un eje de Y o salir: ") 
+            else:   
+                eje_y = input("Ingrese un eje de Y: ")
             if eje_y == "salir":
                 break
             else:          
                 if "." in eje_y:
-                    y.append(float(eje_y))
+                    try:
+                        y.append(float(eje_y))
+                    except ValueError:
+                        print("Error: Ingrese un número entero (1) o flotante (1.5) ")
 
                 else:
                     try:
@@ -94,39 +100,43 @@ class Juegos:
 
         # Eje X
         validacion_x = input("Quiere agregar ejes X? S/N: ").upper()
-
-        if validacion_x == "S":
-            print(f"Escriba {len(y)} ejes de X")
-            
-            x = []
-            while True:
-                if len(x) == len(y):
-                    break
-                else:
-                    eje_x = input("Ingrese un eje de X: ")
-
-         
-                if "." in eje_x:
-                    x.append(float(eje_x))
-                else:
-                    try:
-                        x.append(int(eje_x))
-                    except ValueError:
-                        print("Error: Ingrese un número entero (1) o flotante (1.5)")
-                
-            # Gráfica X / Y
-            print("Función gráfica creada.")
-            plt.plot(x, y)
-            plt.show()
-
+        if len(y) == 0:
+            print("Ningún eje ingresado.")
         else:
-            # Gráfica Y
-            plt.plot(y)
-            plt.show()
+            if validacion_x == "S":
+                print(f"Escriba {len(y)} ejes de X")
+                
+                x = []
+                while True:
+                    if len(x) == len(y):
+                        break
+                    else:
+                        eje_x = input("Ingrese un eje de X: ")
+
+            
+                    if "." in eje_x:
+                        x.append(float(eje_x))
+                    else:
+                        try:
+                            x.append(int(eje_x))
+                        except ValueError:
+                            print("Error: Ingrese un número entero (1) o flotante (1.5)")
+                    
+                # Gráfica X / Y
+                print("Función gráfica creada.")
+                plt.plot(x, y)
+                plt.title("Función Gráfica")
+                plt.show()
+
+            else:
+                # Gráfica Y
+                plt.plot(y)
+                plt.title("Función Gráfica")
+                plt.show()
         
 
 usuario = Juegos()
-usuario.grafico()
+
 
 
 
