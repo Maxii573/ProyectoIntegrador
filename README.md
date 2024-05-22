@@ -14,13 +14,13 @@ Este repositorio contiene una clase Juegos que ofrece cuatro juegos diferentes i
 
 ### Descripción de los juegos
         
-[Piedra, Papel o Tijera](#Piedra, Papel o Tijera)
+[Piedra, Papel o Tijera](#Piedra-Papel-o-Tijera)
 
-[Adivina el número](#Adivina el número)
+[Adivina el número](#Adivina-el-número)
 
-[Tirar un dado](#Tirar un dado)
+[Tirar un dado](#Tirar-un-dado)
 
-[Crear un gráfico](#Crear una gráfica)
+[Crear un gráfico](#Crear-una-gráfica)
 
 
 ## Instalación
