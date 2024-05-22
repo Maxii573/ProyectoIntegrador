@@ -16,7 +16,7 @@ def menu():
 
 # Clase
 class Juegos:
-
+    
     def PPT(self):
         print("\n/////   Piedra   /   Papel  /    Tijera   /////\n")
         opciones = ["Piedra", "Papel", "Tijera"]
@@ -139,7 +139,30 @@ class Juegos:
                 plt.title("Función Gráfica")
                 plt.show()
 usuario = Juegos()
+menu()
 
+# Usuario escoje el método de la clase
+while True:
+    try:
+        user = int(input("\nEscriba un número: "))
+    except ValueError:
+        print("Ingrese un número entero")
+    
+    if (user > 4) or (user < 1):
+        print("Número fuera de rango: Ingrese un número del 1 al 4")
+    else:
+        break
+if user == 1:
+    usuario.PPT()
+elif user == 2:
+    usuario.num_random()
+elif user == 3:
+    usuario.dado()
+elif user == 4:
+    usuario.grafico()
+else:
+    print("\nNúmero fuera de rango: Ingrese un número del 1 al 4")
+    user
 
 
 
