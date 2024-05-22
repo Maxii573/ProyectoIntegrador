@@ -16,6 +16,45 @@ def menu():
 
 # Clase
 class Juegos:
+    """
+        ///// PPT /////
+        El usuario ingresará un elemento de opciones, si no lo ingresa o ingresa de otra manera, tendrá que ingresarlo nuevamente
+        el bot es el método .choice de la libreria random que elije un elemento de opciones
+        la entrada del usuario se les quitará los espaciós y se ordenará las mayúsuculas y minúsculas
+        Hay un sistema de condiciones donde se define cual es el ganador
+
+        
+        ///// num_random /////
+        el bot es el método .randint de la libreria random que elige un número del 1 al 5
+        el user, tendra que eligir un número del 1 al 5 si ingresa otra cosa, imprimirá que debe ingresar el número estimado
+        y deberá a volver ingresar.
+        Mediante una condición, se define cual es el ganador.
+
+        dado: la cara es el método .choice de la libreria random, donde eligirá un número del 1 al 6
+        y se imprimirá el número 
+
+        
+        ///// grafico /////
+        Hay 2 bloques de código:
+        
+        - Eje Y: El usuario tendrá que escribir uno por uno los ejes que pueden ser enteros o flotantes, si escribe otra cosa
+        imprimirá que tiene que elegir los números adecuados.
+
+        Si en la entrada del usuario tiene un punto, será un número flotante, 
+        si da error, se le dirá que escriba un número correspondiente      
+        Caso contrario, si no tiene punto la entrada del usuario, será un entero, 
+        si da error, se le avisará que escriba un número correspondiente.
+        
+        Una vez que el usuario ingreso un eje, se le dirá que puede no escribir más ejes escribiendo "salir" para pasar a la sección
+        de eje X.
+
+        - Eje X: El usuario se le dará la opción si escribir los ejes X o no, si no lo quiere, los ejes X serán los índices de 
+        los elementos de Y. Caso contrario, el usuario tendrá que escribir uno por uno los ejes que pueden ser enteros o flotantes, 
+        si escribe otra cosa imprimirá que tiene que elegir los números adecuados.
+        
+        El usuario solo puede escribir el total de ejes Y. Una vez que el usuario haya escrito los ejes, se abrirá el gráfico.
+
+    """
     
     def PPT(self):
         print("\n/////   Piedra   /   Papel  /    Tijera   /////\n")
