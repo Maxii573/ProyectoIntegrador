@@ -23,7 +23,6 @@ class Juegos:
         
         # Computadora
         bot = random.choice(opciones)
-
         
         # Usuario
         while True:
@@ -37,26 +36,28 @@ class Juegos:
             print(f"\nBot: {bot} / Usuario: {user} -> ¡Es empate!\n")
         else:
             if (user == "Piedra" and bot == "Tijera") or (user == "Tijera" and bot == "Papel") or (user == "Papel" and bot == "Piedra"):
-                print(f"\nBot: {bot} / Usuario: {user} -> ¡Gana el usuario!\n")
+                print(f"\nBot: {bot} / Usuario: {user} -> ¡Gana el usuario!\n")                    
             else:
                 print(f"\nBot: {bot} / Usuario: {user} -> ¡Gana el bot!\n")      
 
 
     def num_random(self):
         print("\n¡Adivina el número del bot! El rango de números: 1 - 5\n")
+        
         # Número computadora
         bot = random.randint(1, 5)
         
         # Número usuario
         while True:
             user = input("Ingrese su número: ")
+            
             try:
                 user = int(user)
             except ValueError:
-                    pass
+                pass
 
             if user in [1, 2, 3, 4, 5]:
-                break
+                break           
             else:
                 print("\nError: Ingrese un número entero del 1 al 5")
 
@@ -83,6 +84,7 @@ class Juegos:
                 eje_y = input("Ingrese un eje de Y o salir: ") 
             else:   
                 eje_y = input("Ingrese un eje de Y: ")
+            
             if eje_y == "salir":
                 break
             else:          
@@ -100,6 +102,7 @@ class Juegos:
 
         # Eje X
         validacion_x = input("Quiere agregar ejes X? S/N: ").upper()
+        
         if len(y) == 0:
             print("Ningún eje ingresado.")
         else:
@@ -113,7 +116,6 @@ class Juegos:
                     else:
                         eje_x = input("Ingrese un eje de X: ")
 
-            
                     if "." in eje_x:
                         x.append(float(eje_x))
                     else:
@@ -124,17 +126,18 @@ class Juegos:
                     
                 # Gráfica X / Y
                 print("Función gráfica creada.")
+                
                 plt.plot(x, y)
                 plt.title("Función Gráfica")
                 plt.show()
 
             else:
                 # Gráfica Y
+                print("Función gráfica creada.")
+                
                 plt.plot(y)
                 plt.title("Función Gráfica")
                 plt.show()
-        
-
 usuario = Juegos()
 
 
